@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.dashboard');
-});
+// Route::get('/', function () {
+//     return view('pages.dashboard');
+// });
+Route::get('/dashboard', 'DataMobilController@index');
+Route::get('/tambahdata', 'DataMobilController@create');
+Route::post('/tambahdata/store', 'DataMobilController@store');
+Route::get('/edit/{id}', 'DataMobilController@edit');
+Route::put('/edit/upload/{id}', 'DataMobilController@upload');
